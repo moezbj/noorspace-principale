@@ -2,11 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Base app styles and small helpers */
-html, body, #root {
-  height: 100%;
+:root {
+  /* default values — change these to the Figma hexs */
+  --ns-primary: #0f172a;   /* <-- replace with Figma sidebar color */
+  --ns-accent: #06b6d4;    /* <-- optional accent color from Figma */
 }
 
-body {
-  @apply bg-gray-50 text-gray-800;
-}
+/* small helpers so Tailwind utilities that reference color variables work well */
+.bg-ns-primary { background-color: var(--ns-primary); }
+.text-ns-primary { color: var(--ns-primary); }
+.border-ns-primary { border-color: var(--ns-primary); }
+
+html, body, #root { height: 100%; }
+
+body { @apply bg-gray-50 text-gray-800; }
