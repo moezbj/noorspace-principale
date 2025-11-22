@@ -1,18 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* default values — change these to the Figma hexs */
-  --ns-primary: #0f172a;   /* <-- replace with Figma sidebar color */
-  --ns-accent: #06b6d4;    /* <-- optional accent color from Figma */
+  --ns-primary: #FFEBDC;
+  --ns-accent: rgba(231, 102, 61, 0.77);
+  --ns-border: #DFDBD8;
+  --ns-card: #FFFFFF;
+  --ns-muted: #1B303E;
+  --ns-on-primary: #1B303E;
 }
 
 /* small helpers so Tailwind utilities that reference color variables work well */
 .bg-ns-primary { background-color: var(--ns-primary); }
 .text-ns-primary { color: var(--ns-primary); }
 .border-ns-primary { border-color: var(--ns-primary); }
+.border-ns-border { border-color: var(--ns-border); }
+.bg-ns-card { background-color: var(--ns-card); }
+.text-ns-muted { color: var(--ns-muted); }
+.text-ns-on-primary { color: var(--ns-on-primary); }
 
 html, body, #root { height: 100%; }
 
 body { @apply bg-gray-50 text-gray-800; }
+

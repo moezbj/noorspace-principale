@@ -6,11 +6,13 @@ module.exports = {
       colors: {
         // These map to CSS variables so you can change the value in one place (src/index.css)
         'ns-primary': 'var(--ns-primary)',
-        'ns-accent': 'var(--ns-accent)'
+        'ns-accent': 'var(--ns-accent)',
+        'ns-border': 'var(--ns-border)',
+        'ns-card': 'var(--ns-card)',
+        'ns-muted': 'var(--ns-muted)'
       },
       fontFamily: {
-        // keep default, or add custom family here if you want to match Figma font
-        sans: ['Inter', 'ui-sans-serif', 'system-ui']
+        sans: ['Noto Sans', 'ui-sans-serif', 'system-ui']
       }
     }
   },

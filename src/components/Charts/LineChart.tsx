@@ -26,6 +26,22 @@ export default function LineChart({ data }: Props) {
     plugins: {
       legend: { position: 'top' as const },
       title: { display: false }
+    },
+    scales: {
+      x: {
+        grid: { display: false },
+        ticks: {
+          color: getComputedStyle(document.documentElement).getPropertyValue('--ns-muted') || '#6b7280',
+          font: { family: 'Noto Sans', size: 12, weight: '400' }
+        }
+      },
+      y: {
+        grid: { color: '#DFDBD8' },
+        ticks: {
+          color: getComputedStyle(document.documentElement).getPropertyValue('--ns-muted') || '#6b7280',
+          font: { family: 'Noto Sans', size: 12, weight: '400' }
+        }
+      }
     }
   };
 
