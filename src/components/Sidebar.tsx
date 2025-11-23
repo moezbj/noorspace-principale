@@ -385,36 +385,6 @@ export default function Sidebar({ open, onToggle, activeKey = 'dashboard', role 
           })}
         </ul>
       </nav>
-
-      <div className="p-3 border-t border-white/10"> 
-        <button
-          className={clsx(
-            'flex items-center gap-3 w-full px-3 py-2 rounded-md transition-colors',
-            'text-white/90 hover:bg-white/5',
-            !open && 'justify-center'
-          )}
-        >
-          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden>
-            <path d="M12 12v6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M6 10l6-6 6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-          <span className={clsx('text-sm', !open && 'hidden')}>Settings</span>
-        </button>
-
-        <button
-          className={clsx(
-            'mt-2 flex items-center gap-3 w-full px-3 py-2 rounded-md transition-colors',
-            'text-white/90 hover:bg-white/5',
-            !open && 'justify-center'
-          )}
-        >
-          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden>
-            <path d="M16 17v-5a4 4 0 10-8 0v5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M12 22a2 2 0 002-2H10a2 2 0 002 2z" fill="currentColor" />
-          </svg>
-          <span className={clsx('text-sm', !open && 'hidden')}>Sign out</span>
-        </button>
-      </div>
     </aside>
   );
 }

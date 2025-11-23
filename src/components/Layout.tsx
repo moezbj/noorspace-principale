@@ -47,11 +47,11 @@ export default function Layout({ children }: Props) {
   }
 
   return (
-    <div className="min-h-screen flex">
+    <div className="h-screen overflow-hidden flex">
       <Sidebar open={sidebarOpen} onToggle={() => setSidebarOpen(v => !v)} activeKey={route} role={role} />
       <div className="flex-1 flex flex-col">
         <Header onToggleSidebar={() => setSidebarOpen(v => !v)} />
-        <main className="p-6 bg-white min-h-[calc(100vh-64px)]">
+        <main className="p-6 bg-white flex-1 overflow-y-auto">
                   {route === 'dashboard' && <PrincipaleDashboard />}
                   {route === 'statistics' && <Statistics />}
                   {route.startsWith('students') && <Students />}

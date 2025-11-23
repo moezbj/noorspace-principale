@@ -1,9 +1,22 @@
 import React from 'react';
 import Dropdown from './ui/Dropdown';
+import { useAuth } from '../context/AuthProvider';
 
 type Props = {
   onToggleSidebar: () => void;
 };
+
+function HeaderUserMenu() {
+  const { signout } = useAuth();
+  return (
+    <div className="p-2 min-w-[180px]">
+      <a href="#profile" className="block w-full text-left px-3 py-2 hover:bg-gray-100 rounded">Profile</a>
+      <button onClick={signout} className="block w-full text-left px-3 py-2 hover:bg-gray-100 rounded">Sign out</button>
+    </div>
+  );
+}
+
+
 
 export default function Header({ onToggleSidebar }: Props) {
   return (
@@ -25,13 +38,19 @@ export default function Header({ onToggleSidebar }: Props) {
           </div>
         </Dropdown>
 
-        <div className="flex items-center gap-2">
-          <img src="/src/assets/avatar-placeholder.png" alt="avatar" className="w-8 h-8 rounded-full" />
-          <div className="hidden md:block">
-            <div className="text-sm font-medium">Noor Admin</div>
-            <div className="text-xs text-gray-500">Principale</div>
-          </div>
-        </div>
+        <Dropdown
+          trigger={
+            <div className="flex items-center gap-2 cursor-pointer">
+              <img src="/src/assets/avatar-placeholder.png" alt="avatar" className="w-8 h-8 rounded-full" />
+              <div className="hidden md:block">
+                <div className="text-sm font-medium">Noor Admin</div>
+                <div className="text-xs text-gray-500">Principale</div>
+              </div>
+            </div>
+          }
+        >
+          <HeaderUserMenu />
+        </Dropdown>
       </div>
     </header>
   );

@@ -33,7 +33,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   });
 
   async function signin({ email, password, role }: { email: string; password: string; role: Role }): Promise<boolean> {
-    const url = (import.meta as any).env?.VITE_API_URL || 'http://localhost:4000/graphql';
+    const url = (import.meta as any).env?.VITE_API_URL || 'http://localhost:4001/graphql';
     const q = `mutation($role: Role!, $email: String!, $password: String!) { login(role: $role, email: $email, password: $password) { role user { id name email role } token } }`;
     const res = await fetch(url, {
       method: 'POST',
